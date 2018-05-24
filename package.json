@@ -1,10 +1,10 @@
 {
-  "name": "pawa",
+  "name": "starwars",
   "version": "1.0.0-alpha.1",
-  "description": "Electricity vending application",
+  "description": "People in Star Wars",
   "author": "Akinjiola Toni",
-  "url": "http://pawa.paytron.com.ng",
-  "copyright": "Copyright 2017 Paytron",
+  "url": "",
+  "copyright": "Copyright 2018",
   "license": "MIT",
   "scripts": {
     "ng": "ng",

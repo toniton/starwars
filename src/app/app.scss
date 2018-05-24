@@ -161,28 +161,6 @@ form {
         display: block !important;
     }
 }
-.side-right {
-    position: fixed;
-    float: right;
-    right: 0;
-    background: #eae6e6;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: scroll;
-    background-image: url('../assets/images/home-bg.png');
-    img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    &.success {
-        background-image: url('../assets/images/success-bg.png');
-    }
-    &.failure {
-        background-image: url('../assets/images/failure-bg.png');
-    }
-}
 
 @supports (zoom:2) {
 	input[type="radio"],  input[type="checkbox"]{
