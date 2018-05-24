@@ -86,3 +86,22 @@ export function SLIDE_IN_LEFT(): AnimationEntryMetadata {
         ])
     ]);
 }
+export function FLY_IN_OUT(): AnimationEntryMetadata {
+
+    return trigger('flyInOut', [
+        state('', style({ opacity: 1, transform: 'translateY(0)' })),
+        transition('void => *', [
+            style({
+                opacity: 0,
+                transform: 'translateY(15%)'
+            }),
+            animate('0.4s ease-in')
+        ]),
+        transition('* => void', [
+            animate('0.4s 0.2s ease-out', style({
+                opacity: 0,
+                transform: 'translateY(-50%)'
+            }))
+        ])
+    ])
+}

@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 import { DOCUMENT } from '@angular/platform-browser';
-import { SLIDE_IN_OUT } from '../../config/animations';
+import { SLIDE_IN_OUT, FLY_IN_OUT } from '../../config/animations';
 import { Subscription } from 'rxjs/Subscription';
 import { NgForm } from '@angular/forms';
 import { StarwarsService } from '../../services/starwars.service';
@@ -18,22 +18,7 @@ import { Observable } from 'rxjs/Observable';
     encapsulation: ViewEncapsulation.None,
     animations: [
         SLIDE_IN_OUT(),
-        trigger('flyInOut', [
-            state('', style({ opacity: 1, transform: 'translateY(0)' })),
-            transition('void => *', [
-                style({
-                    opacity: 0,
-                    transform: 'translateY(15%)'
-                }),
-                animate('0.4s ease-in')
-            ]),
-            transition('* => void', [
-                animate('0.4s 0.2s ease-out', style({
-                    opacity: 0,
-                    transform: 'translateY(-50%)'
-                }))
-            ])
-        ])
+        FLY_IN_OUT()
     ]
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
