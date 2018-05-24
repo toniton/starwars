@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FullLayoutComponent } from '../core/layouts/full-layout/full-layout.component';
 import { PartialLayoutComponent } from '../core/layouts/partial-layout/partial-layout.component';
 import { RouterModule } from '@angular/router';
-import { BulbFooterComponent } from './footers/bulb-footer/bulb-footer.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { PartialHeaderComponent } from './headers/partial-header/partial-header.component';
 
 @NgModule({
   imports: [
@@ -14,8 +14,8 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
   declarations: [
     FullLayoutComponent,
     PartialLayoutComponent,
-    BulbFooterComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    PartialHeaderComponent
   ],
   exports: [
     FullLayoutComponent,
