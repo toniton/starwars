@@ -5,6 +5,20 @@
         background: #f7f7f7;
         padding: 8px;
         .filter-body {
+            .btn, .dropdown-toggle {
+                font-size: 12px;
+                letter-spacing: 1.7px;
+                background: #a1a1a1;
+                line-height: 12px;
+                display: inline-block;
+                box-sizing: border-box;
+                height: 30px;
+                border-radius: 15px;
+                padding: 9px 15px;
+                border: 0;
+                margin: 10px 8px 0 0;
+                text-decoration: none;
+            }
         }
     }
     .person-box {

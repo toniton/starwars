@@ -185,13 +185,14 @@
                 </div>
             </div>
         </a>
+        <div class="display-4" *ngIf="people.length === 0">No results for people</div>
     </div>
     <ng-template #loadingPeople>
         <div class="lead my-5">
             <div class="loader">Loading
-                <span class="loader__dot">.</span>
-                <span class="loader__dot">.</span>
-                <span class="loader__dot">.</span>
+                <span class="loader-dot">.</span>
+                <span class="loader-dot">.</span>
+                <span class="loader-dot">.</span>
             </div>
         </div>
     </ng-template>

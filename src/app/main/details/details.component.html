@@ -6,8 +6,35 @@
       </div>
       <div class="col-md-9">
         <h1 class="display-4"> {{ person.name }} </h1>
-        <p class="lead" *ngIf="(planet$ | async); let planet">Planet: {{ planet.name }}</p>
-        <div class="row">
+        <div class="planet-section" *ngIf="(planet$ | async); let planet; else planetLoading">
+          <p class="planet-name lead">Planet: {{ planet.name }}</p>
+          <ul class="planet-details-list d-flex list-unstyled">
+              <li>
+                <i class="fa fa-globe"></i>
+                  {{ planet.terrain }}
+              </li>
+              <li>
+                <i class="fa fa-cloud"></i>
+                  {{ planet.climate }}
+              </li>
+              <li>
+                <i class="fa fa-users"></i>
+                  {{ planet.population }}
+              </li>
+          </ul>
+        </div>
+        <ng-template #planetLoading>
+          <div class="planet-section">
+            <div class="lead my-5">
+              <div class="loader">Loading
+                <span class="loader-dot">.</span>
+                <span class="loader-dot">.</span>
+                <span class="loader-dot">.</span>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+        <div class="row mt-3">
           <div class="col-4">
             <div class="form-group">
               <label class="form-control-label">Skin Color</label>
