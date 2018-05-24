@@ -1,0 +1,21 @@
+#home {
+    #location-loader {
+        width: 14px;
+        height: 14px;
+        float: right;
+        &.bg-spin-loading:after {
+            width: 14px !important;
+            height: 14px !important;
+            margin-left: -0.5em !important;
+            margin-top: -.25em !important;
+            border-width:.15em !important;
+        }
+    }
+    .input-loading {
+        position: absolute;
+        float: right;
+        right: 0;
+        z-index: 9;
+        height: 100%;
+    }
+}

@@ -1,0 +1,55 @@
+<div id="home" class="inner-body mt-3">
+    <a routerLink="/">
+        <div class="display-5">
+            <span class="text-light-gray">#Starwars?</span>
+        </div>
+    </a>
+    <div class="content">
+        <form class="form" #buyForm="ngForm" (ngSubmit)="onSubmit(buyForm)" novalidate>
+            <div class="form-group">
+                <div class="form-row">
+                    <label class="form-control-label" for="person">Search Person</label>
+                    <div class="input-group" [class.is-invalid]="(person.errors && person.dirty) || (person.errors && person.touched)">
+                        <input aria-describedby="personHelp" class="form-control" [class.is-invalid]="(person.errors && person.dirty) || (person.errors && person.touched)"
+                            id="person" name="person" type="search" [(ngModel)]="model.person" #person="ngModel" required/>
+                        <button class="btn btn-primary float-right" type="submit" loadingButton [changeState]="progressEmitter" [disabled]="!buyForm.form.valid || validating">Search</button>
+                    </div>
+                    <div *ngIf="person.errors && person.dirty" class="invalid-feedback">
+                        <div [hidden]="!person.errors.required">
+                            Person field is required
+                        </div>
+                    </div>
+                    <div *ngIf="person.errors && person.touched" class="invalid-feedback">
+                        <div [hidden]="!person.errors.required">
+                            Type in the name of the character you want to search for.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="clearfix my-2">
+        <div class="dropdown float-left">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Filter
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+        <a class="float-right" href="#" (click)="initPeople()">Clear</a>
+    </div>
+    <div class="card-columns my-5" *ngIf="(people$ | async); let people">
+        <div class="card" style="width: 20rem;" *ngFor="let person of people.results" [@flyInOut]="'in'" (click)="gotoDetails(person.url)">
+            <div class="card-body">
+                <h5 class="card-title">{{ person.name }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted"> {{ person.height }} Height</h6>
+                <p class="card-text"> {{ person.birth_year }} Birth Year</p>
+            </div>
+        </div>
+    </div>
+</div>
