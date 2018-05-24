@@ -5,7 +5,6 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { FullLayoutComponent } from './core/layouts/full-layout/full-layout.component';
 import { PartialLayoutComponent } from './core/layouts/partial-layout/partial-layout.component';
 import { AuthGuard } from './guards/auth.guard';
-import { BulbLayoutComponent } from './core/layouts/bulb-layout/bulb-layout.component';
 import { VendorResolver } from './resolvers/vendor.resolver';
 import { NotFoundComponent } from './core/errors/not-found/not-found.component';
 

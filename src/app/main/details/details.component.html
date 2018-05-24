@@ -5,11 +5,11 @@
     </div>
   </a>
   <div class="content mt-6">
-    <div class="row">
+    <div class="row" *ngIf="(person$ | async); let person; else loadingPerson">
       <div class="col-md-3">
         <img src="https://api.adorable.io/avatars/180/abott@adorable.png" alt="adorable" class="rounded-right">
       </div>
-      <div class="col-md-9" *ngIf="(person$ | async); let person; else loadingPerson">
+      <div class="col-md-9">
         <h1 class="display-4"> {{ person.name }} </h1>
         <p class="lead" *ngIf="(planet$ | async); let planet">Planet: {{ planet.name }}</p>
         <div class="row">
@@ -67,15 +67,15 @@
           </div>
         </div>
       </div>
-      <ng-template #loadingPerson>
-          <div class="lead my-5">
-              <div class="loader">Loading
-                  <span class="loader__dot">.</span>
-                  <span class="loader__dot">.</span>
-                  <span class="loader__dot">.</span>
-              </div>
-          </div>
-      </ng-template>
     </div>
+    <ng-template #loadingPerson>
+      <div class="lead my-5">
+        <div class="loader">Loading
+          <span class="loader-dot">.</span>
+          <span class="loader-dot">.</span>
+          <span class="loader-dot">.</span>
+        </div>
+      </div>
+    </ng-template>
   </div>
 </div>

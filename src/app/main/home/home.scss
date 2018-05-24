@@ -1,8 +1,11 @@
 #home {
     .filter-bar {
         clear: both;
-        height: 48px;
+        min-height: 48px;
         background: #f7f7f7;
+        padding: 8px;
+        .filter-body {
+        }
     }
     .person-box {
         .card {
