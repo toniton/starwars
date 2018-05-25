@@ -1,10 +1,58 @@
 #home {
+
+    .home-title {
+        letter-spacing: -2px;
+    }
+
+    .search-overlay { 
+        background-color: rgba(45, 45, 45, 0.65);
+        top: -40px;
+        left: 0px;
+        right: 0px;
+        height: calc(100vh + 40px);
+        position: fixed;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+
+        &.active {
+            opacity: 1;
+            z-index: 19000;
+        }
+    }
+
+    .card, .search-bar {
+        // border: 1px solid rgba(123, 112, 68, 0.13) !important;
+        border: 1px solid rgba(232, 206, 101, 0.55) !important;
+    }
+    .search-bar {
+        background: #fff;
+        padding: 8px;
+        border-radius: 36px;
+        z-index: 19001;
+
+        input {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            &:-webkit-autofill {
+                background: none !important;
+            }
+        }
+
+        button {
+            z-index: 999;
+        }
+
+    }
     .filter-bar {
         clear: both;
         min-height: 48px;
-        background: #f7f7f7;
+        background: rgba(247, 247, 247, 0.64);
         padding: 8px;
+
         .filter-body {
+
             .btn, .dropdown-toggle {
                 font-size: 12px;
                 letter-spacing: 1.7px;
@@ -21,7 +69,9 @@
             }
         }
     }
+
     .person-box {
+
         .card {
             &:hover {
                 background: #f7f7f7 !important;

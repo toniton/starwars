@@ -31,6 +31,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     public progressLoading = false;
     public locationLoading = false;
     public people$: Observable<any>;
+    public searchOverlay = false;
     @ViewChild('searchForm') form: NgForm;
     @HostBinding('@slideInOutAnimation') slideInOutAnimation;
 
@@ -49,6 +50,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     initPeople() {
         this.people$ = this.starwarsService.people();
+    }
+
+    setSearchOverlayStatus(status) {
+        this.searchOverlay = status;
     }
 
     onSubmit(form: NgForm) {

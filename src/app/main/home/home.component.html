@@ -1,25 +1,28 @@
-<div id="home" class="mt-3">
+<div id="home">
+    <div class="row my-5">
+        <div class="col">
+            <h1 class="display-6 home-title">Looking for your favourite
+                <br/> StarWars character?</h1>
+        </div>
+        <div class="col-md-auto align-self-end">
+            <img src="assets/images/banner-1.png" />
+        </div>
+    </div>
     <div class="content">
         <div class="row">
             <div class="col">
-                <form class="form" #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate>
+                <div class="search-overlay" [class.active]="searchOverlay"></div>
+                <form class="form mt-0" #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off" novalidate>
                     <div class="form-group">
-                        <div class="form-row">
-                            <label class="form-control-label" for="person">Search Person</label>
-                            <div class="input-group" [class.is-invalid]="(person.errors && person.dirty) || (person.errors && person.touched)">
-                                <input aria-describedby="personHelp" class="form-control" [class.is-invalid]="(person.errors && person.dirty) || (person.errors && person.touched)"
-                                    id="person" name="person" type="search" [(ngModel)]="model.person" #person="ngModel" required/>
-                                <button class="btn btn-primary float-right" type="submit" loadingButton [changeState]="progressEmitter" [disabled]="!form.form.valid || validating">Search</button>
-                            </div>
-                            <div *ngIf="person.errors && person.dirty" class="invalid-feedback">
-                                <div [hidden]="!person.errors.required">
-                                    Person field is required
-                                </div>
-                            </div>
-                            <div *ngIf="person.errors && person.touched" class="invalid-feedback">
-                                <div [hidden]="!person.errors.required">
-                                    Type in the name of the character you want to search for.
-                                </div>
+                        <div class="input-group search-bar" [class.is-invalid]="(person.errors && person.dirty) || (person.errors && person.touched)">
+                            <input aria-describedby="personHelp" class="form-control" [class.is-invalid]="(person.errors && person.dirty) || (person.errors && person.touched)"
+                                id="person" name="person" placeholder="Search for your starwars character" type="search" [(ngModel)]="model.person"
+                                #person="ngModel" (focus)="setSearchOverlayStatus(true)" (focusout)="setSearchOverlayStatus(false)" required/>
+                            <button class="btn btn-primary pulsate" type="submit" loadingButton [changeState]="progressEmitter" [disabled]="!form.form.valid || validating">Search</button>
+                        </div>
+                        <div *ngIf="person.errors && person.touched" class="invalid-feedback">
+                            <div [hidden]="!person.errors.required">
+                                Type in the name of the character you want to search for.
                             </div>
                         </div>
                     </div>
@@ -177,19 +180,18 @@
     </div>
     <div class="content" *ngIf="(people$ | async); let people else loadingPeople">
         <div class="card-columns my-5">
-            <a class="person-box" href="javascript:;" (click)="gotoDetails(person.url)" *ngFor="let person of people.results">
-                <div class="card" style="width: 18rem;" [@flyInOut]="'in'">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ person.name }}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted"> {{ person.height }} Height</h6>
-                        <p class="card-text"> {{ person.birth_year }} Birth Year</p>
-                    </div>
+            <a class="person-box card" style="min-width: 16rem;" href="javascript:;" [@flyInOut]="'in'" (click)="gotoDetails(person.url)"
+                *ngFor="let person of people.results">
+                <div class="card-body">
+                    <h5 class="card-title">{{ person.name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted"> {{ person.height }} Height</h6>
+                    <p class="card-text"> {{ person.birth_year }} Birth Year</p>
                 </div>
             </a>
             <div class="display-4" *ngIf="people.length === 0">No results for people</div>
         </div>
         <nav aria-label="Page navigation example">
-            
+
             <span class="badge float-left">
                 {{people.count}} Total
             </span>
