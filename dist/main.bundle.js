@@ -1245,8 +1245,15 @@ var StarwarsService = /** @class */ (function () {
         this.http = http;
     }
     ;
-    StarwarsService.prototype.people = function () {
-        console.log('reached here');
+    StarwarsService.prototype.people = function (page) {
+        if (page === void 0) { page = null; }
+        if (page !== null) {
+            return this.http.get(''.concat(__WEBPACK_IMPORTED_MODULE_1__environments_environment__["a" /* environment */].API_URL, '/', __WEBPACK_IMPORTED_MODULE_1__environments_environment__["a" /* environment */].PREFIX, '/', __WEBPACK_IMPORTED_MODULE_2__config_endpoint__["a" /* endpoints */].PEOPLE), {
+                params: {
+                    page: page
+                }
+            });
+        }
         return this.http.get(''.concat(__WEBPACK_IMPORTED_MODULE_1__environments_environment__["a" /* environment */].API_URL, '/', __WEBPACK_IMPORTED_MODULE_1__environments_environment__["a" /* environment */].PREFIX, '/', __WEBPACK_IMPORTED_MODULE_2__config_endpoint__["a" /* endpoints */].PEOPLE));
     };
     ;

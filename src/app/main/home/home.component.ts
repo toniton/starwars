@@ -61,6 +61,11 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         this.router.navigate(['/details', urlId])
     }
 
+    loadPage(url: string) {
+        const pageNumber = url.replace('https://swapi.co/api/people/?page=', '');
+        this.people$ = this.starwarsService.people(pageNumber);
+    }
+
     ngOnDestroy() {
         if (this.subscription) {
             this.subscription.unsubscribe();

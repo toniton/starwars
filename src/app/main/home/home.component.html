@@ -194,11 +194,11 @@
                 {{people.count}} Total
             </span>
             <ul class="pagination justify-content-end">
-                <li class="page-item" [class.disabled]="people.previous !== 'null'">
-                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                <li class="page-item" [class.disabled]="!people.previous">
+                    <a class="page-link" href="#" tabindex="-1" (click)="loadPage(people.previous)">Previous</a>
                 </li>
-                <li class="page-item" [class.disabled]="people.next !== 'null'">
-                    <a class="page-link" href="#">Next</a>
+                <li class="page-item" [class.disabled]="!people.next">
+                    <a class="page-link" href="#" (click)="loadPage(people.next)">Next</a>
                 </li>
             </ul>
         </nav>

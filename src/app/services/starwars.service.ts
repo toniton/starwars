@@ -8,8 +8,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class StarwarsService {
     public id: string;
     constructor(private http: HttpClient) { };
-    people(): Observable<Response> {
-        console.log('reached here');
+    people(page: any = null): Observable<Response> {
+        if (page !== null) {
+            return this.http.get<ApiResponse>(''.concat(environment.API_URL, '/', environment.PREFIX, '/', endpoints.PEOPLE), {
+                params: {
+                    page: page
+                }
+            });
+        }
         return this.http.get<ApiResponse>(''.concat(environment.API_URL, '/', environment.PREFIX, '/', endpoints.PEOPLE));
     };
     findPeople(name): Observable<Response> {
