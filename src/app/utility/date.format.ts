@@ -1,7 +1,8 @@
 export const DATEFORMAT = {
     sameDay: '[Today], HH:MM A',
     nextDay: '[Tomorrow], HH:MM A',
-    nextWeek: 'd/M/YYYY',
+    nextWeek: 'Do MMM, YYYY',
     lastDay: '[Yesterday], HH:MM A',
-    lastWeek: 'd/M/YYYY',
+    lastWeek: 'Do MMM, YYYY',
+    sameElse: 'Do MMM, YYYY',
 };

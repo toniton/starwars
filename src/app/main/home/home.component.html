@@ -175,17 +175,33 @@
             </div>
         </div>
     </div>
-    <div class="card-columns my-5" *ngIf="(people$ | async); let people else loadingPeople">
-        <a class="person-box" href="javascript:;" (click)="gotoDetails(person.url)" *ngFor="let person of people.results">
-            <div class="card" style="width: 18rem;" [@flyInOut]="'in'">
-                <div class="card-body">
-                    <h5 class="card-title">{{ person.name }}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted"> {{ person.height }} Height</h6>
-                    <p class="card-text"> {{ person.birth_year }} Birth Year</p>
+    <div class="content" *ngIf="(people$ | async); let people else loadingPeople">
+        <div class="card-columns my-5">
+            <a class="person-box" href="javascript:;" (click)="gotoDetails(person.url)" *ngFor="let person of people.results">
+                <div class="card" style="width: 18rem;" [@flyInOut]="'in'">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ person.name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted"> {{ person.height }} Height</h6>
+                        <p class="card-text"> {{ person.birth_year }} Birth Year</p>
+                    </div>
                 </div>
-            </div>
-        </a>
-        <div class="display-4" *ngIf="people.length === 0">No results for people</div>
+            </a>
+            <div class="display-4" *ngIf="people.length === 0">No results for people</div>
+        </div>
+        <nav aria-label="Page navigation example">
+            
+            <span class="badge float-left">
+                {{people.count}} Total
+            </span>
+            <ul class="pagination justify-content-end">
+                <li class="page-item" [class.disabled]="people.previous !== 'null'">
+                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item" [class.disabled]="people.next !== 'null'">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
     </div>
     <ng-template #loadingPeople>
         <div class="lead my-5">

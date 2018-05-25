@@ -3,24 +3,29 @@
     <div class="row" *ngIf="(person$ | async); let person; else loadingPerson">
       <div class="col-md-3">
         <img src="https://api.adorable.io/avatars/180/abott@adorable.png" alt="adorable" class="rounded-right">
+        <div class="my-2">
+          <a routerLink="/"><i class="fa fa-arrow-left"></i> &nbsp;Back to homepage</a>
+        </div>
       </div>
       <div class="col-md-9">
-        <h1 class="display-4"> {{ person.name }} </h1>
+        <h1 class="display-4"> {{ person.name }}
+          <small class="font-weight-light">(Character)</small>
+        </h1>
         <div class="planet-section" *ngIf="(planet$ | async); let planet; else planetLoading">
           <p class="planet-name lead">Planet: {{ planet.name }}</p>
           <ul class="planet-details-list d-flex list-unstyled">
-              <li>
-                <i class="fa fa-globe"></i>
-                  {{ planet.terrain }}
-              </li>
-              <li>
-                <i class="fa fa-cloud"></i>
-                  {{ planet.climate }}
-              </li>
-              <li>
-                <i class="fa fa-users"></i>
-                  {{ planet.population }}
-              </li>
+            <li>
+              <i class="fa fa-globe"></i>
+              {{ planet.terrain | titlecase }}
+            </li>
+            <li>
+              <i class="fa fa-cloud"></i>
+              {{ planet.climate | titlecase }}
+            </li>
+            <li>
+              <i class="fa fa-users"></i>
+              {{ planet.population | number : '1.0-0' }}
+            </li>
           </ul>
         </div>
         <ng-template #planetLoading>
@@ -38,19 +43,19 @@
           <div class="col-4">
             <div class="form-group">
               <label class="form-control-label">Skin Color</label>
-              <input type="text" readonly class="form-control-plaintext h5" [value]="person.skin_color">
+              <input type="text" readonly class="form-control-plaintext h5" [value]="person.skin_color | titlecase">
             </div>
           </div>
           <div class="col-4">
             <div class="form-group">
               <label class="form-control-label">Gender</label>
-              <input type="text" readonly class="form-control-plaintext h5" [value]="person.gender">
+              <input type="text" readonly class="form-control-plaintext h5" [value]="person.gender | titlecase">
             </div>
           </div>
           <div class="col-4">
             <div class="form-group">
               <label class="form-control-label">Eye Color</label>
-              <input type="text" readonly class="form-control-plaintext h5" [value]="person.eye_color">
+              <input type="text" readonly class="form-control-plaintext h5" [value]="person.eye_color | titlecase">
             </div>
           </div>
           <div class="col-4">
@@ -68,7 +73,7 @@
           <div class="col-4">
             <div class="form-group">
               <label class="form-control-label">Hair Color</label>
-              <input type="text" readonly class="form-control-plaintext h5" [value]="person.hair_color">
+              <input type="text" readonly class="form-control-plaintext h5" [value]="person.hair_color | titlecase">
             </div>
           </div>
         </div>
@@ -76,15 +81,13 @@
           <div class="col">
             <div class="card">
               <div class="card-header h4">
-                Neighbours
+                Neighbours in planet {{ planet.name }}
               </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item" *ngFor="let occupant of planet.residents">
-                  <a href="javascript:;" (click)="gotoDetails(occupant)">
-                    <app-resident [url]="occupant"></app-resident>
-                  </a>
-                </li>
-              </ul>
+              <div class="list-group">
+                <a href="javascript:;" (click)="gotoDetails(occupant)" class="list-group-item list-group-item-action" *ngFor="let occupant of planet.residents">
+                  <app-resident [url]="occupant"></app-resident>
+                </a>
+              </div>
             </div>
           </div>
         </div>

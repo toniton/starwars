@@ -78,7 +78,7 @@ var AppComponent = /** @class */ (function () {
         })
             .filter(function (route) { return route.outlet === 'primary'; })
             .mergeMap(function (route) { return route.data; })
-            .subscribe(function (event) { return _this.titleService.setTitle('Pawa | ' + event['title']); });
+            .subscribe(function (event) { return _this.titleService.setTitle('Starwars | ' + event['title']); });
     };
     AppComponent.prototype.watchInternetConnectivity = function () {
         var _this = this;
