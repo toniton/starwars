@@ -1,6 +1,6 @@
 import {
     trigger, transition, animate, style, state,
-    keyframes, query, group, sequence, animateChild
+    keyframes, query, group, sequence, animateChild, stagger
 } from '@angular/animations';
 import { AnimationEntryMetadata } from '@angular/core';
 
@@ -86,6 +86,7 @@ export function SLIDE_IN_LEFT(): AnimationEntryMetadata {
         ])
     ]);
 }
+
 export function FLY_IN_OUT(): AnimationEntryMetadata {
 
     return trigger('flyInOut', [
@@ -102,6 +103,32 @@ export function FLY_IN_OUT(): AnimationEntryMetadata {
                 opacity: 0,
                 transform: 'translateY(-50%)'
             }))
+        ])
+    ])
+}
+
+export function FLY_IN_OUT_LIST(): AnimationEntryMetadata {
+
+    return trigger('flyInOutList', [
+        state('', style({ opacity: 1, transform: 'translateY(0)' })),
+        transition('* => *', [
+            query(':enter', [
+                style({
+                    opacity: 0,
+                    transform: 'translateY(15%)'
+                }),
+                stagger(160, [
+                    animate('0.4s ease-in')
+                ])
+            ], { optional: true }),
+            query(':leave', [
+                stagger(80, [
+                    animate('0.4s 0.2s ease-out', style({
+                        opacity: 0,
+                        transform: 'translateY(60%)'
+                    }))
+                ])
+            ], { optional: true })
         ])
     ])
 }

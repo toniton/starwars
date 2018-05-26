@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 import { DOCUMENT } from '@angular/platform-browser';
-import { SLIDE_IN_OUT, FLY_IN_OUT } from '../../config/animations';
+import { SLIDE_IN_OUT, FLY_IN_OUT, FLY_IN_OUT_LIST } from '../../config/animations';
 import { Subscription } from 'rxjs/Subscription';
 import { NgForm } from '@angular/forms';
 import { StarwarsService } from '../../services/starwars.service';
@@ -18,7 +18,8 @@ import { Observable } from 'rxjs/Observable';
     encapsulation: ViewEncapsulation.None,
     animations: [
         SLIDE_IN_OUT(),
-        FLY_IN_OUT()
+        FLY_IN_OUT(),
+        FLY_IN_OUT_LIST()
     ]
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
@@ -32,6 +33,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     public locationLoading = false;
     public people$: Observable<any>;
     public searchOverlay = false;
+    public itemsCount = 0;
     @ViewChild('searchForm') form: NgForm;
     @HostBinding('@slideInOutAnimation') slideInOutAnimation;
 
@@ -49,7 +51,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     initPeople() {
-        this.people$ = this.starwarsService.people();
+        this.people$ = this.starwarsService.people()
+        .do((response: any) => this.setCurrentPageCount(response.results.length, response.next, response.count));
     }
 
     setSearchOverlayStatus(status) {
@@ -58,7 +61,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     onSubmit(form: NgForm) {
         const data: any = form.value;
-        this.people$ = this.starwarsService.findPeople(data.person);
+        this.people$ = this.starwarsService.findPeople(data.person)
+        .do((response: any) => this.setCurrentPageCount(response.results.length, response.next, response.count));
     }
 
     gotoDetails(url: string) {
@@ -68,7 +72,17 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     loadPage(url: string) {
         const pageNumber = url.replace('https://swapi.co/api/people/?page=', '');
-        this.people$ = this.starwarsService.people(pageNumber);
+        this.people$ = this.starwarsService.people(pageNumber)
+        .do((response: any) => this.setCurrentPageCount(response.results.length, response.next, response.count));
+    }
+
+    setCurrentPageCount(items, url, totalCount) {
+        if (url === null) {
+            this.itemsCount = totalCount;
+            return;
+        }
+        const pageNumber = url.replace('https://swapi.co/api/people/?page=', '');
+        this.itemsCount = items * (pageNumber - 1);
     }
 
     ngOnDestroy() {

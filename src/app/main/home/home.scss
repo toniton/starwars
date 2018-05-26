@@ -48,7 +48,8 @@
     .filter-bar {
         clear: both;
         min-height: 48px;
-        background: rgba(247, 247, 247, 0.64);
+        background-color: rgba(247, 247, 247, 0.64);
+        border-radius: 5px;
         padding: 8px;
 
         .filter-body {
@@ -70,6 +71,11 @@
         }
     }
 
+    .card-columns {
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(16rem, 1fr));
+    }
+
     .person-box {
 
         .card {
@@ -79,6 +85,69 @@
 		        -webkit-box-shadow: 0 0 4px #ccc;
                 box-shadow: 0 0 4px #ccc;
                 transform: scale(1.01);
+            }
+        }
+    }
+
+    .pagination {
+        .page-item {
+            background-color: rgba(247, 247, 247, 0.64);
+            padding: 6px;
+            border-radius: 58px;
+            &.disabled {
+                a {
+                    background-color: #fdc95085;
+                    border: 1px solid #fdb81885;
+                }
+            }
+            a {
+                background-color: #fdc950;
+                border: 1px solid #fdb818;
+                color: #ffffff;
+                position: relative;
+                display: block;
+                width: 52px;
+                height: 52px;
+                line-height: 1.5;
+                border-radius: 36px;
+                text-align: center;
+                box-shadow: 2px 2px 5px rgba(0,0,0,.1);
+                transition: width 0.2s ease-in-out, margin 0.1s ease-in-out;
+                padding: 12px;
+                white-space: nowrap;
+                overflow: hidden;
+                i {
+                    margin-right: 15px;
+                }
+                &.previous {
+                    & > div {
+                        margin-left: 8px;
+                    }
+                }
+                &.next {
+                    i {
+                        margin-right: 0px;
+                        margin-left: 15px;
+                    }
+                    & > div {
+                        margin-left: -48px;
+                    }
+                }
+            }
+            &:hover {
+                a {
+                    width: 140px;
+                    &.next {
+                        & > div {
+                            margin-left: 0px;
+                        }
+                    }
+                    &.previous {
+                        & > div {
+                            margin-right: 0px;
+                        }
+                    }
+                }
             }
         }
     }
