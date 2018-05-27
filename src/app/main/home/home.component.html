@@ -180,6 +180,9 @@
         </div>
     </div>
     <div class="content" [@flyInOutList]="people.length" *ngIf="(people$ | async); let people else loadingPeople">
+        <div class="mt-5" *ngIf="people.results.length === 0">
+            <h3>No results found</h3>
+        </div>
         <div class="card-columns my-5">
             <a class="person-box" href="javascript:;" (click)="gotoDetails(person.url)" *ngFor="let person of people.results">
                 <div class="card" style="min-width: 16rem;">
