@@ -1387,17 +1387,17 @@ var AlertComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/widgets/alert/alert.component.html"),
             styles: [__webpack_require__("./src/app/widgets/alert/alert.component.scss")],
             animations: [
-                Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["m" /* trigger */])('flyInOut', [
-                    Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["j" /* state */])('', Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["k" /* style */])({ opacity: 1, transform: 'translateY(0)' })),
-                    Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["l" /* transition */])('void => *', [
-                        Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["k" /* style */])({
+                Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["n" /* trigger */])('flyInOut', [
+                    Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["k" /* state */])('', Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["l" /* style */])({ opacity: 1, transform: 'translateY(0)' })),
+                    Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["m" /* transition */])('void => *', [
+                        Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["l" /* style */])({
                             opacity: 0,
                             transform: 'translateY(-50%)'
                         }),
                         Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["e" /* animate */])('0.4s ease-in')
                     ]),
-                    Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["l" /* transition */])('* => void', [
-                        Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["e" /* animate */])('0.4s 0.2s ease-out', Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["k" /* style */])({
+                    Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["m" /* transition */])('* => void', [
+                        Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["e" /* animate */])('0.4s 0.2s ease-out', Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["l" /* style */])({
                             opacity: 0,
                             transform: 'translateY(-50%)'
                         }))
@@ -1704,14 +1704,14 @@ var LoaderComponent = /** @class */ (function () {
             styles: [__webpack_require__("./src/app/widgets/loader/loader.component.scss")],
             encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None,
             animations: [
-                Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["m" /* trigger */])('show', [
-                    Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["l" /* transition */])(':enter', [
-                        Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["k" /* style */])({ opacity: 0 }),
-                        Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["e" /* animate */])(100, Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["k" /* style */])({ opacity: 1 }))
+                Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["n" /* trigger */])('show', [
+                    Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["m" /* transition */])(':enter', [
+                        Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["l" /* style */])({ opacity: 0 }),
+                        Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["e" /* animate */])(100, Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["l" /* style */])({ opacity: 1 }))
                     ]),
-                    Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["l" /* transition */])(':leave', [
-                        Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["k" /* style */])({ opacity: 1 }),
-                        Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["e" /* animate */])(150, Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["k" /* style */])({ opacity: 0 }))
+                    Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["m" /* transition */])(':leave', [
+                        Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["l" /* style */])({ opacity: 1 }),
+                        Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["e" /* animate */])(150, Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["l" /* style */])({ opacity: 0 }))
                     ])
                 ])
             ]
