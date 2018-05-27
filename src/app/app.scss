@@ -40,6 +40,19 @@
         padding-left: 64px !important;
     }
 }
+:host {
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
+    main {
+      position: relative;
+    }
+    router-outlet ~ * {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
 .logo {
     text-decoration: none !important;
 }
@@ -55,7 +68,11 @@
     }
 }
 .navbar {
-    background: #1b1b1b;
+    background-color: #1b1b1b;
+    background-image: url('../assets/images/header-background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: border-box;
     color: #fff !important;
     padding-bottom: 6px !important;
     padding-top: 6px !important;
@@ -77,6 +94,25 @@ body {
             }
         }
     }
+}
+
+
+.card, .search-bar {
+    border: 1px solid rgba(232, 206, 101, 0.55) !important;
+}
+
+.card {
+    &:hover {
+        background: #f7f7f7 !important;
+        -moz-box-shadow: 0 0 4px rgb(232, 206, 101);
+        -webkit-box-shadow: 0 0 4px rgb(232, 206, 101);
+        box-shadow: 0 0 4px rgb(232, 206, 101);
+        transform: scale(1.01);
+    }
+}
+
+.display-1, .display-2, .display-3,.display-4, .display-5, .display-6 {
+    letter-spacing: -2px;
 }
 
 form {

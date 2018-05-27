@@ -1,9 +1,5 @@
 #home {
 
-    .home-title {
-        letter-spacing: -2px;
-    }
-
     .search-overlay { 
         background-color: rgba(45, 45, 45, 0.65);
         top: -40px;
@@ -21,10 +17,6 @@
         }
     }
 
-    .card, .search-bar {
-        // border: 1px solid rgba(123, 112, 68, 0.13) !important;
-        border: 1px solid rgba(232, 206, 101, 0.55) !important;
-    }
     .search-bar {
         background: #fff;
         padding: 8px;
@@ -74,19 +66,6 @@
     .card-columns {
         display: grid;
         grid-template-columns: repeat(auto-fill,minmax(16rem, 1fr));
-    }
-
-    .person-box {
-
-        .card {
-            &:hover {
-                background: #f7f7f7 !important;
-                -moz-box-shadow: 0 0 4px #ccc;
-		        -webkit-box-shadow: 0 0 4px #ccc;
-                box-shadow: 0 0 4px #ccc;
-                transform: scale(1.01);
-            }
-        }
     }
 
     .pagination {

@@ -1,11 +1,16 @@
 #details {
+    label {
+        margin-bottom: 0.3rem;
+    }
+    .form-control-plaintext {
+        padding-top: 0.1rem;
+    }
     .planet-section {
-        background: #a1a1a1;
-        padding: 15px;
-        color: #fafafa;
+        min-height: 58px;
+
         ul.planet-details-list {
             li {
-                padding: 8px;
+                padding: 4px 8px 4px 0px;
                 i {
                     margin-right: 6px;
                     font-size: 14px;

@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 import { DOCUMENT } from '@angular/platform-browser';
-import { SLIDE_IN_OUT, FLY_IN_OUT, FLY_IN_OUT_LIST } from '../../config/animations';
+import { FLY_IN_OUT_LIST } from '../../config/animations';
 import { Subscription } from 'rxjs/Subscription';
 import { NgForm } from '@angular/forms';
 import { StarwarsService } from '../../services/starwars.service';
@@ -17,8 +17,6 @@ import { Observable } from 'rxjs/Observable';
     ],
     encapsulation: ViewEncapsulation.None,
     animations: [
-        SLIDE_IN_OUT(),
-        FLY_IN_OUT(),
         FLY_IN_OUT_LIST()
     ]
 })
@@ -35,7 +33,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     public searchOverlay = false;
     public itemsCount = 0;
     @ViewChild('searchForm') form: NgForm;
-    @HostBinding('@slideInOutAnimation') slideInOutAnimation;
 
     constructor(
         private route: ActivatedRoute,

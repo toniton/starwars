@@ -123,15 +123,6 @@ $paragraph-margin-bottom:   0.8125rem !default;
 .btn {
   font-size: 12px !important;
   letter-spacing: 0.6px !important;
-  &[type="submit"] {
-    border: 0 !important;
-    outline:  0 !important;
-  }
-  &:focus,
-  &.focus {
-    border: 0 !important;
-    outline:  0 !important;
-  }
   &.btn-primary {
     background: #419a59 !important;
     border-color: #419a59;
@@ -143,16 +134,11 @@ $paragraph-margin-bottom:   0.8125rem !default;
   &.btn-lg {
     font-size: 18px !important;
   }
-}
-button{
-  &:active,
-  &.active, 
-  &:hover,
-  &.hover, 
-  &:focus,
-  &.focus {
-    border: 0 !important;
-    outline:  0 !important;
+  &.btn-link {
+    text-decoration: none !important;
+  }
+  &.collapsed {
+    color: #419a59 !important
   }
 }
 

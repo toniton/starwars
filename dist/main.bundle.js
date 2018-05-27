@@ -6,20 +6,18 @@ webpackJsonp(["main"],{
 var map = {
 	"./main/details/details.module": [
 		"./src/app/main/details/details.module.ts",
-		"details.module",
-		"common"
+		"details.module"
 	],
 	"./main/home/home.module": [
 		"./src/app/main/home/home.module.ts",
-		"home.module",
-		"common"
+		"home.module"
 	]
 };
 function webpackAsyncContext(req) {
 	var ids = map[req];
 	if(!ids)
 		return Promise.reject(new Error("Cannot find module '" + req + "'."));
-	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
+	return __webpack_require__.e(ids[1]).then(function() {
 		return __webpack_require__(ids[0]);
 	});
 };
@@ -286,7 +284,155 @@ var AppRoutingModule = /** @class */ (function () {
 /***/ "./src/app/app.scss":
 /***/ (function(module, exports) {
 
-module.exports = "/*------------------------------------------------------------------\n * Project Name: Pawa Responsive Template\n * Project URI: http://pawa.paytron.com.ng\n * Author: Siliconbear\n * Author URI: http://siliconbear.com/\n * Description: An application that helps you buy light accross Africa\n * Version: 1.0\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n * Bootstrap v4 (http://getbootstrap.com)\n * Copyright 2017 Paytron.\n -------------------------------------------------------------------*/\n/*------------------------------------------------------------------\n[Table of contents]\n\n1. General Styles.\n2. Header Styles.\n3. Top Content Styles.\n4. info Section Styles.\n5. Services Section Styles.\n6. Message Section Styles.\n7. Pricing Section Styles.\n8. Custom Plan Section Styles.\n9. Features Section Styles.\n10. Testimonials Section Styles.\n11. More Features Section Styles.\n12. Footer Section Styles.\n13. Sign in - Sign up Pages Styles.\n14. Inner Pages Styles.\n15. Responsive Styles.\n-------------------------------------------------------------------*/\n/*------------------------------------------------------------------\n\t1. General Styles\n-------------------------------------------------------------------*/\n@media (min-width: 768px) {\n  .container-fluid {\n    padding-right: 64px !important;\n    padding-left: 64px !important; } }\n.logo {\n  text-decoration: none !important; }\n.topbar {\n  position: fixed;\n  top: 0;\n  right: 0;\n  left: 0;\n  z-index: 9999; }\n.topbar .alert {\n    text-align: center;\n    margin-bottom: 0 !important; }\n.navbar {\n  background: #1b1b1b;\n  color: #fff !important;\n  padding-bottom: 6px !important;\n  padding-top: 6px !important; }\n.navbar-toggler-right {\n  margin-top: 12px;\n  right: 0px; }\nbody {\n  background: #fee588;\n  -webkit-transition: opacity 0.3s ease-in;\n  transition: opacity 0.3s ease-in; }\n@media (max-width: 768px) {\n  #bulb-header .navbar-nav .nav-link {\n    color: #001f39; } }\nform {\n  margin-top: 36px; }\nform .input-group-prepend > .btn {\n    padding-left: 0.75rem !important;\n    padding-right: 0.5rem !important; }\nform .form-action a {\n    margin-top: 12px;\n    color: #a5a5a5;\n    text-decoration: underline; }\nform .form-action .form-check .form-check-input {\n    height: 30px;\n    width: 30px; }\nform .form-action .form-check .form-check-text {\n    display: block;\n    margin-left: 30px; }\n.dataTables_wrapper.container-fluid {\n  padding-left: 0 !important;\n  padding-right: 0 !important; }\n.dataTables_wrapper.container-fluid .dataTables_scrollBody {\n    min-height: 320px; }\n.inner-footer {\n  padding: 15px 0;\n  margin-left: auto;\n  margin-right: auto; }\n.inner-footer .media {\n    max-width: 460px; }\n.inner-footer .media .media-body {\n      font-size: 11px; }\n@media (max-width: 768px) {\n  .inner-footer {\n    position: relative;\n    margin-top: 60px; }\n    .inner-footer .container {\n      padding: 0; } }\n@media (max-width: 768px) {\n  .navbar {\n    background: #ffffff !important; }\n  .container {\n    margin-left: 0 !important;\n    margin-right: 0 !important; } }\n@media (max-width: 991px) {\n  .navbar-toggleable-md .navbar-nav .dropdown-menu {\n    display: block !important; } }\n@supports (zoom: 2) {\n  input[type=\"radio\"], input[type=\"checkbox\"] {\n    zoom: 1.1; } }\n@supports not (zoom: 2) {\n  input[type=\"radio\"], input[type=\"checkbox\"] {\n    -webkit-transform: scale(1.1);\n            transform: scale(1.1);\n    margin: 15px; } }\n"
+module.exports = "/*------------------------------------------------------------------\n * Project Name: Pawa Responsive Template\n * Project URI: http://pawa.paytron.com.ng\n * Author: Siliconbear\n * Author URI: http://siliconbear.com/\n * Description: An application that helps you buy light accross Africa\n * Version: 1.0\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n * Bootstrap v4 (http://getbootstrap.com)\n * Copyright 2017 Paytron.\n -------------------------------------------------------------------*/\n/*------------------------------------------------------------------\n[Table of contents]\n\n1. General Styles.\n2. Header Styles.\n3. Top Content Styles.\n4. info Section Styles.\n5. Services Section Styles.\n6. Message Section Styles.\n7. Pricing Section Styles.\n8. Custom Plan Section Styles.\n9. Features Section Styles.\n10. Testimonials Section Styles.\n11. More Features Section Styles.\n12. Footer Section Styles.\n13. Sign in - Sign up Pages Styles.\n14. Inner Pages Styles.\n15. Responsive Styles.\n-------------------------------------------------------------------*/\n/*------------------------------------------------------------------\n\t1. General Styles\n-------------------------------------------------------------------*/\n@media (min-width: 768px) {\n  .container-fluid {\n    padding-right: 64px !important;\n    padding-left: 64px !important; } }\n:host {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  overflow: hidden;\n  height: 100vh; }\n:host main {\n    position: relative; }\n:host router-outlet ~ * {\n    position: absolute;\n    width: 100%;\n    height: 100%; }\n.logo {\n  text-decoration: none !important; }\n.topbar {\n  position: fixed;\n  top: 0;\n  right: 0;\n  left: 0;\n  z-index: 9999; }\n.topbar .alert {\n    text-align: center;\n    margin-bottom: 0 !important; }\n.navbar {\n  background-color: #1b1b1b;\n  background-image: url('header-background.863e76e93f57cfda1cb3.png');\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-clip: border-box;\n  color: #fff !important;\n  padding-bottom: 6px !important;\n  padding-top: 6px !important; }\n.navbar-toggler-right {\n  margin-top: 12px;\n  right: 0px; }\nbody {\n  background: #fee588;\n  -webkit-transition: opacity 0.3s ease-in;\n  transition: opacity 0.3s ease-in; }\n@media (max-width: 768px) {\n  #bulb-header .navbar-nav .nav-link {\n    color: #001f39; } }\n.card, .search-bar {\n  border: 1px solid rgba(232, 206, 101, 0.55) !important; }\n.card:hover {\n  background: #f7f7f7 !important;\n  -webkit-box-shadow: 0 0 4px #e8ce65;\n  box-shadow: 0 0 4px #e8ce65;\n  -webkit-transform: scale(1.01);\n          transform: scale(1.01); }\n.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {\n  letter-spacing: -2px; }\nform {\n  margin-top: 36px; }\nform .input-group-prepend > .btn {\n    padding-left: 0.75rem !important;\n    padding-right: 0.5rem !important; }\nform .form-action a {\n    margin-top: 12px;\n    color: #a5a5a5;\n    text-decoration: underline; }\nform .form-action .form-check .form-check-input {\n    height: 30px;\n    width: 30px; }\nform .form-action .form-check .form-check-text {\n    display: block;\n    margin-left: 30px; }\n.dataTables_wrapper.container-fluid {\n  padding-left: 0 !important;\n  padding-right: 0 !important; }\n.dataTables_wrapper.container-fluid .dataTables_scrollBody {\n    min-height: 320px; }\n.inner-footer {\n  padding: 15px 0;\n  margin-left: auto;\n  margin-right: auto; }\n.inner-footer .media {\n    max-width: 460px; }\n.inner-footer .media .media-body {\n      font-size: 11px; }\n@media (max-width: 768px) {\n  .inner-footer {\n    position: relative;\n    margin-top: 60px; }\n    .inner-footer .container {\n      padding: 0; } }\n@media (max-width: 768px) {\n  .navbar {\n    background: #ffffff !important; }\n  .container {\n    margin-left: 0 !important;\n    margin-right: 0 !important; } }\n@media (max-width: 991px) {\n  .navbar-toggleable-md .navbar-nav .dropdown-menu {\n    display: block !important; } }\n@supports (zoom: 2) {\n  input[type=\"radio\"], input[type=\"checkbox\"] {\n    zoom: 1.1; } }\n@supports not (zoom: 2) {\n  input[type=\"radio\"], input[type=\"checkbox\"] {\n    -webkit-transform: scale(1.1);\n            transform: scale(1.1);\n    margin: 15px; } }\n"
+
+/***/ }),
+
+/***/ "./src/app/config/animations.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export FADE_IN_SCALEUP */
+/* unused harmony export SLIDE_IN_OUT */
+/* unused harmony export SLIDE_IN_DOWN */
+/* unused harmony export SLIDE_IN_LEFT */
+/* harmony export (immutable) */ __webpack_exports__["a"] = FLY_IN_OUT;
+/* harmony export (immutable) */ __webpack_exports__["b"] = FLY_IN_OUT_LIST;
+/* harmony export (immutable) */ __webpack_exports__["c"] = ROUTER_FADE_ANIMATION;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_animations__ = __webpack_require__("./node_modules/@angular/animations/esm5/animations.js");
+
+function FADE_IN_SCALEUP() {
+    return Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["n" /* trigger */])('fadeInScaleUp', [
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["m" /* transition */])(':enter', [
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({ transform: 'scale(0.8)', opacity: 0 }),
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('.2s', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({ transform: 'scale(1.0)', opacity: 1 }))
+        ])
+    ]);
+}
+;
+function SLIDE_IN_OUT() {
+    return Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["n" /* trigger */])('slideInOutAnimation', [
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["m" /* transition */])('* => *', [
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* query */])(':enter, :leave', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({ position: 'fixed', width: '100%' }), { optional: true }),
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* query */])(':enter', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({ transform: 'translateX(100%)' }), { optional: true }),
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["i" /* sequence */])([
+                Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* query */])(':leave', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["f" /* animateChild */])(), { optional: true }),
+                Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["g" /* group */])([
+                    Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* query */])(':leave', [
+                        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({ transform: 'translateX(0%)' }),
+                        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('500ms cubic-bezier(.75,-0.48,.26,1.52)', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({ transform: 'translateX(-100%)' }))
+                    ], { optional: true }),
+                    Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* query */])(':enter', [
+                        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({ transform: 'translateX(100%)' }),
+                        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('500ms cubic-bezier(.75,-0.48,.26,1.52)', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({ transform: 'translateX(0%)' })),
+                    ], { optional: true }),
+                ]),
+                Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* query */])(':enter', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["f" /* animateChild */])(), { optional: true }),
+            ])
+        ])
+    ]);
+}
+;
+// Component transition animations
+function SLIDE_IN_DOWN() {
+    return Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["n" /* trigger */])('slideInDownAnimation', [
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["k" /* state */])('*', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({
+            opacity: 1,
+            transform: 'translateX(0)'
+        })),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["m" /* transition */])(':enter', [
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({
+                opacity: 0,
+                transform: 'translateX(-100%)'
+            }),
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('0.2s ease-in')
+        ]),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["m" /* transition */])(':leave', [
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('0.5s ease-out', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({
+                opacity: 0,
+                transform: 'translateY(100%)'
+            }))
+        ])
+    ]);
+}
+function SLIDE_IN_LEFT() {
+    return Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["n" /* trigger */])('slideInLeftAnimation', [
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["k" /* state */])('* <=> *', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({
+            opacity: 0,
+            transform: 'translateX(0)'
+        })),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["m" /* transition */])(':enter', [
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({
+                opacity: 0,
+                transform: 'translateX(-100%)'
+            }),
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('0.4s ease-in')
+        ]),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["m" /* transition */])(':leave', [
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('0.8s ease-out', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({
+                opacity: 0,
+                transform: 'translateY(100%)'
+            }))
+        ])
+    ]);
+}
+function FLY_IN_OUT() {
+    return Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["n" /* trigger */])('flyInOut', [
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["k" /* state */])('', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({ opacity: 1, transform: 'translateY(0)' })),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["m" /* transition */])('void => *', [
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({
+                opacity: 0,
+                transform: 'translateY(15%)'
+            }),
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('0.4s ease-in')
+        ]),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["m" /* transition */])('* => void', [
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('0.4s 0.2s ease-out', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({
+                opacity: 0,
+                transform: 'translateY(-50%)'
+            }))
+        ])
+    ]);
+}
+function FLY_IN_OUT_LIST() {
+    return Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["n" /* trigger */])('flyInOutList', [
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["k" /* state */])('', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({ opacity: 1, transform: 'translateY(0)' })),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["m" /* transition */])('* => *', [
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* query */])(':enter', [
+                Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({
+                    opacity: 0,
+                    transform: 'translateY(15%)'
+                }),
+                Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["j" /* stagger */])(160, [
+                    Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('0.4s ease-in')
+                ])
+            ], { optional: true }),
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* query */])(':leave', [
+                Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["j" /* stagger */])(80, [
+                    Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('0.4s 0.2s ease-out', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({
+                        opacity: 0,
+                        transform: 'translateY(60%)'
+                    }))
+                ])
+            ], { optional: true })
+        ])
+    ]);
+}
+function ROUTER_FADE_ANIMATION() {
+    return Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["n" /* trigger */])('routerFadeAnimation', [
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["m" /* transition */])('* => *', [
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* query */])(':enter', [
+                Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({ opacity: 0 }),
+                Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('0.2s', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({ opacity: 1 }))
+            ], { optional: true }),
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* query */])(':leave', [
+                Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({ opacity: 1 }),
+                Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('0.1s', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({ opacity: 0 }))
+            ], { optional: true })
+        ])
+    ]);
+}
+
 
 /***/ }),
 
@@ -512,7 +658,7 @@ var NotFoundComponent = /** @class */ (function () {
 /***/ "./src/app/core/headers/partial-header/partial-header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-light\">\n  <div class=\"container-fluid\">\n    <a class=\"navbar-brand\" routerLink=\"/\">\n      <div class=\"display-5\">\n        <!-- <span class=\"text-light-gray\">#Starwars?</span> -->\n        <img src=\"assets/images/starwars-logo.svg\" height=\"60px\"/>\n      </div>\n    </a>\n  </div>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-light\">\n  <div class=\"container-fluid\">\n    <a class=\"navbar-brand\" routerLink=\"/\">\n      <div class=\"display-5\">\n        <img src=\"assets/images/starwars-logo.svg\" height=\"60px\"/>\n      </div>\n    </a>\n  </div>\n</nav>"
 
 /***/ }),
 
@@ -607,7 +753,7 @@ var FullLayoutComponent = /** @class */ (function () {
 /***/ "./src/app/core/layouts/partial-layout/partial-layout.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header id=\"header-holder\">\n    <app-partial-header></app-partial-header>\n</header>\n<div class=\"container-fluid\">\n    <router-outlet></router-outlet>\n</div>"
+module.exports = "<header id=\"header-holder\">\n    <app-partial-header></app-partial-header>\n</header>\n<main>\n    <div class=\"container-fluid\" [@routerFadeAnimation]=\"getRouterOutletState(o)\">\n        <router-outlet #o=\"outlet\"></router-outlet>\n    </div>\n</main>"
 
 /***/ }),
 
@@ -617,7 +763,7 @@ module.exports = "<header id=\"header-holder\">\n    <app-partial-header></app-p
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PartialLayoutComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_animations__ = __webpack_require__("./src/app/config/animations.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -627,108 +773,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 
 
 var PartialLayoutComponent = /** @class */ (function () {
-    function PartialLayoutComponent(_window, route, router) {
-        this._window = _window;
-        this.route = route;
-        this.router = router;
-        this.contactForm = {};
-        this.disabled = false;
-        this.reachUsSliderVisible = false;
-        this.status = { isopen: false };
-        router.events
-            .filter(function (event) { return event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* NavigationStart */]; })
-            .subscribe(function (event) {
-            // You only receive NavigationStart events
-        });
+    function PartialLayoutComponent() {
     }
     PartialLayoutComponent.prototype.ngOnInit = function () {
     };
-    PartialLayoutComponent.prototype.scrollTo = function (yPoint, duration) {
-        var _this = this;
-        setTimeout(function () {
-            _this._window.scrollTo(0, yPoint);
-        }, duration);
-        return;
-    };
-    PartialLayoutComponent.prototype.smoothScroll = function (eID) {
-        var startY = this.currentYPosition();
-        var stopY = this.elmYPosition(eID);
-        var distance = stopY > startY ? stopY - startY : startY - stopY;
-        if (distance < 100) {
-            this._window.scrollTo(0, stopY);
-            return;
-        }
-        var speed = Math.round(distance / 100);
-        if (speed >= 20) {
-            speed = 20;
-        }
-        var step = Math.round(distance / 100);
-        var leapY = stopY > startY ? startY + step : startY - step;
-        var timer = 0;
-        if (stopY > startY) {
-            for (var i = startY; i < stopY; i += step) {
-                this.scrollTo(leapY, timer * speed);
-                leapY += step;
-                if (leapY > stopY) {
-                    leapY = stopY;
-                }
-                timer++;
-            }
-            return;
-        }
-        for (var i = startY; i > stopY; i -= step) {
-            this.scrollTo(leapY, timer * speed);
-            leapY -= step;
-            if (leapY < stopY) {
-                leapY = stopY;
-            }
-            timer++;
-        }
-    };
-    PartialLayoutComponent.prototype.currentYPosition = function () {
-        // Firefox, Chrome, Opera, Safari
-        if (self.pageYOffset) {
-            return self.pageYOffset;
-        }
-        // Internet Explorer 6 - standards mode
-        if (document.documentElement && document.documentElement.scrollTop) {
-            return document.documentElement.scrollTop;
-        }
-        // Internet Explorer 6, 7 and 8
-        if (document.body.scrollTop) {
-            return document.body.scrollTop;
-        }
-        return 0;
-    };
-    PartialLayoutComponent.prototype.elmYPosition = function (eID) {
-        var elm = document.getElementById(eID);
-        var y = elm.offsetTop;
-        var node = elm;
-        while (node.offsetParent && node.offsetParent !== document.body) {
-            node = node.offsetParent;
-            y += node.offsetTop;
-        }
-        return y;
+    PartialLayoutComponent.prototype.getRouterOutletState = function (outlet) {
+        return outlet.isActivated ? outlet.activatedRoute : '';
     };
     PartialLayoutComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-body',
             template: __webpack_require__("./src/app/core/layouts/partial-layout/partial-layout.component.html"),
             encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None,
-            providers: [
-                { provide: 'WindowObject', useValue: window }
+            animations: [
+                Object(__WEBPACK_IMPORTED_MODULE_1__config_animations__["c" /* ROUTER_FADE_ANIMATION */])()
             ]
         }),
-        __param(0, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"])('WindowObject')),
-        __metadata("design:paramtypes", [Window,
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["f" /* Router */]])
+        __metadata("design:paramtypes", [])
     ], PartialLayoutComponent);
     return PartialLayoutComponent;
 }());
