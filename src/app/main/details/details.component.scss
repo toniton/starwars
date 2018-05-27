@@ -18,4 +18,25 @@
             }
         }
     }
+    .sidebar {
+        &.card {
+            background-color: transparent;
+            box-shadow: none !important;
+            border: none !important;
+            &:hover {
+                background-color: transparent !important;
+                box-shadow: none !important;
+                border: none !important;
+                transform: scale(1) !important;
+            }
+            .list-group-item {
+                background-color: rgba(247, 247, 247, 0.64);
+                margin-bottom: 4px;
+            }
+            .list-group-item:first-child {
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+            }
+        }
+    }
 }

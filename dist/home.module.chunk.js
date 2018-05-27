@@ -444,6 +444,7 @@ var HomeComponent = /** @class */ (function () {
     };
     HomeComponent.prototype.onSubmit = function (form) {
         var _this = this;
+        this.setSearchOverlayStatus(false);
         var data = form.value;
         this.people$ = this.starwarsService.findPeople(data.person)
             .do(function (response) { return _this.setCurrentPageCount(response.results.length, response.next, response.count); });

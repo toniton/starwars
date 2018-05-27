@@ -101,7 +101,7 @@ body {
     border: 1px solid rgba(232, 206, 101, 0.55) !important;
 }
 
-.card {
+.card, .list-group-item {
     &:hover {
         background: #f7f7f7 !important;
         -moz-box-shadow: 0 0 4px rgb(232, 206, 101);

@@ -57,6 +57,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     onSubmit(form: NgForm) {
+        this.setSearchOverlayStatus(false);
         const data: any = form.value;
         this.people$ = this.starwarsService.findPeople(data.person)
         .do((response: any) => this.setCurrentPageCount(response.results.length, response.next, response.count));
