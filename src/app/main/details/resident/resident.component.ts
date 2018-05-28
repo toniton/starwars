@@ -16,14 +16,16 @@ export class ResidentComponent implements OnInit {
   @Input()
   public url = '';
   public person$: Observable<any>;
-  @HostBinding('@flyInOut') slideInOutAnimation = 'out';
+  @HostBinding('@flyInOut') animState = 'out';
   constructor(
     private starwarsService: StarwarsService
   ) { }
 
   ngOnInit() {
     this.person$ = this.starwarsService.fetchPersonByUrl(this.url)
-      .do(() => this.slideInOutAnimation = 'in');
+    // .delay(90)
+    // .do(() => this.slideInOutAnimation = 'in');
+    .do(() => this.animState = 'in');
   }
 
   formatDate(data) {

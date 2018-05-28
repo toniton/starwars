@@ -26,13 +26,13 @@
                 </ul>
               </div>
               <ng-template #planetLoading>
-                  <div class="lead">
-                    <div class="loader">Loading
-                      <span class="loader-dot">.</span>
-                      <span class="loader-dot">.</span>
-                      <span class="loader-dot">.</span>
-                    </div>
+                <div class="lead">
+                  <div class="loader">Loading
+                    <span class="loader-dot">.</span>
+                    <span class="loader-dot">.</span>
+                    <span class="loader-dot">.</span>
                   </div>
+                </div>
               </ng-template>
             </div>
             <hr/>
@@ -88,10 +88,8 @@
               <div class="card-header h5 text-center">
                 Neighbours in {{ planet.name }}
               </div>
-              <div class="list-group">
-                <a href="javascript:;" (click)="gotoDetails(occupant)" class="list-group-item list-group-item-action" *ngFor="let occupant of planet.residents">
-                  <app-resident [url]="occupant"></app-resident>
-                </a>
+              <div class="list-group" [@flyInOutListParent]>
+                  <app-resident [url]="occupant" (click)="gotoDetails(occupant)" #resident *ngFor="let occupant of planet.residents"></app-resident>
               </div>
             </div>
           </div>

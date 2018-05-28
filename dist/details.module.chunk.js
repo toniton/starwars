@@ -16783,7 +16783,7 @@ module.exports = function(module) {
 /***/ "./src/app/main/details/details.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"details\">\n  <div class=\"content\">\n    <div class=\"row mt-5\" *ngIf=\"(person$ | async); let person; else loadingPerson\">\n      <div class=\"col-md-8\">\n        <h1 class=\"display-4\"> {{ person.name }}\n          <small class=\"font-weight-light\">(Character)</small>\n        </h1>\n        <div class=\"card\">\n          <div class=\"card-body\">\n            <div class=\"planet-section\">\n              <div class=\"planet-details\" *ngIf=\"(planet$ | async); let planet; else planetLoading\">\n                <h4 class=\"planet-name\">Planet: {{ planet.name }}</h4>\n                <ul class=\"planet-details-list d-flex list-unstyled\">\n                  <li>\n                    <i class=\"fa fa-globe\"></i>\n                    {{ planet.terrain | titlecase }}\n                  </li>\n                  <li>\n                    <i class=\"fa fa-cloud\"></i>\n                    {{ planet.climate | titlecase }}\n                  </li>\n                  <li>\n                    <i class=\"fa fa-users\"></i>\n                    {{ planet.population | number : '1.0-0' }}\n                  </li>\n                </ul>\n              </div>\n              <ng-template #planetLoading>\n                  <div class=\"lead\">\n                    <div class=\"loader\">Loading\n                      <span class=\"loader-dot\">.</span>\n                      <span class=\"loader-dot\">.</span>\n                      <span class=\"loader-dot\">.</span>\n                    </div>\n                  </div>\n              </ng-template>\n            </div>\n            <hr/>\n            <div class=\"row mt-3\">\n              <div class=\"col-4\">\n                <div class=\"form-group\">\n                  <label class=\"form-control-label\">Skin Color</label>\n                  <input type=\"text\" readonly class=\"form-control-plaintext h5\" [value]=\"person.skin_color | titlecase\">\n                </div>\n              </div>\n              <div class=\"col-4\">\n                <div class=\"form-group\">\n                  <label class=\"form-control-label\">Gender</label>\n                  <input type=\"text\" readonly class=\"form-control-plaintext h5\" [value]=\"person.gender | titlecase\">\n                </div>\n              </div>\n              <div class=\"col-4\">\n                <div class=\"form-group\">\n                  <label class=\"form-control-label\">Eye Color</label>\n                  <input type=\"text\" readonly class=\"form-control-plaintext h5\" [value]=\"person.eye_color | titlecase\">\n                </div>\n              </div>\n              <div class=\"col-4\">\n                <div class=\"form-group\">\n                  <label class=\"form-control-label\">Mass</label>\n                  <input type=\"text\" readonly class=\"form-control-plaintext h5\" [value]=\"person.mass\">\n                </div>\n              </div>\n              <div class=\"col-4\">\n                <div class=\"form-group\">\n                  <label class=\"form-control-label\">Height</label>\n                  <input type=\"text\" readonly class=\"form-control-plaintext h5\" [value]=\"person.height\">\n                </div>\n              </div>\n              <div class=\"col-4\">\n                <div class=\"form-group\">\n                  <label class=\"form-control-label\">Hair Color</label>\n                  <input type=\"text\" readonly class=\"form-control-plaintext h5\" [value]=\"person.hair_color | titlecase\">\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n        <div class=\"my-2\">\n          <a class=\"btn btn-primary\" routerLink=\"/\">\n            <i class=\"fa fa-arrow-left\"></i> &nbsp;Back to homepage</a>\n        </div>\n      </div>\n      <div class=\"col-md-4\">\n        <div class=\"row my-3\" *ngIf=\"(planet$ | async); let planet\">\n          <div class=\"col\">\n            <div class=\"sidebar card\">\n              <div class=\"card-header h5 text-center\">\n                Neighbours in {{ planet.name }}\n              </div>\n              <div class=\"list-group\">\n                <a href=\"javascript:;\" (click)=\"gotoDetails(occupant)\" class=\"list-group-item list-group-item-action\" *ngFor=\"let occupant of planet.residents\">\n                  <app-resident [url]=\"occupant\"></app-resident>\n                </a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n    <ng-template #loadingPerson>\n      <div class=\"lead my-5\">\n        <div class=\"loader\">Loading\n          <span class=\"loader-dot\">.</span>\n          <span class=\"loader-dot\">.</span>\n          <span class=\"loader-dot\">.</span>\n        </div>\n      </div>\n    </ng-template>\n  </div>\n</div>"
+module.exports = "<div id=\"details\">\n  <div class=\"content\">\n    <div class=\"row mt-5\" *ngIf=\"(person$ | async); let person; else loadingPerson\">\n      <div class=\"col-md-8\">\n        <h1 class=\"display-4\"> {{ person.name }}\n          <small class=\"font-weight-light\">(Character)</small>\n        </h1>\n        <div class=\"card mt-3\">\n          <div class=\"card-body\">\n            <div class=\"planet-section\">\n              <div class=\"planet-details\" *ngIf=\"(planet$ | async); let planet; else planetLoading\">\n                <h4 class=\"planet-name\">Planet: {{ planet.name }}</h4>\n                <ul class=\"planet-details-list d-flex list-unstyled\">\n                  <li>\n                    <i class=\"fa fa-globe\"></i>\n                    {{ planet.terrain | titlecase }}\n                  </li>\n                  <li>\n                    <i class=\"fa fa-cloud\"></i>\n                    {{ planet.climate | titlecase }}\n                  </li>\n                  <li>\n                    <i class=\"fa fa-users\"></i>\n                    {{ planet.population | number : '1.0-0' }}\n                  </li>\n                </ul>\n              </div>\n              <ng-template #planetLoading>\n                <div class=\"lead\">\n                  <div class=\"loader\">Loading\n                    <span class=\"loader-dot\">.</span>\n                    <span class=\"loader-dot\">.</span>\n                    <span class=\"loader-dot\">.</span>\n                  </div>\n                </div>\n              </ng-template>\n            </div>\n            <hr/>\n            <div class=\"row mt-3\">\n              <div class=\"col-4\">\n                <div class=\"form-group\">\n                  <label class=\"form-control-label\">Skin Color</label>\n                  <input type=\"text\" readonly class=\"form-control-plaintext h5\" [value]=\"person.skin_color | titlecase\">\n                </div>\n              </div>\n              <div class=\"col-4\">\n                <div class=\"form-group\">\n                  <label class=\"form-control-label\">Gender</label>\n                  <input type=\"text\" readonly class=\"form-control-plaintext h5\" [value]=\"person.gender | titlecase\">\n                </div>\n              </div>\n              <div class=\"col-4\">\n                <div class=\"form-group\">\n                  <label class=\"form-control-label\">Eye Color</label>\n                  <input type=\"text\" readonly class=\"form-control-plaintext h5\" [value]=\"person.eye_color | titlecase\">\n                </div>\n              </div>\n              <div class=\"col-4\">\n                <div class=\"form-group\">\n                  <label class=\"form-control-label\">Mass</label>\n                  <input type=\"text\" readonly class=\"form-control-plaintext h5\" [value]=\"person.mass\">\n                </div>\n              </div>\n              <div class=\"col-4\">\n                <div class=\"form-group\">\n                  <label class=\"form-control-label\">Height</label>\n                  <input type=\"text\" readonly class=\"form-control-plaintext h5\" [value]=\"person.height\">\n                </div>\n              </div>\n              <div class=\"col-4\">\n                <div class=\"form-group\">\n                  <label class=\"form-control-label\">Hair Color</label>\n                  <input type=\"text\" readonly class=\"form-control-plaintext h5\" [value]=\"person.hair_color | titlecase\">\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n        <div class=\"my-2\">\n          <a class=\"btn btn-primary\" routerLink=\"/\">\n            <i class=\"fa fa-arrow-left\"></i> &nbsp;Back to homepage</a>\n        </div>\n      </div>\n      <div class=\"col-md-4\">\n        <div class=\"row my-3\" *ngIf=\"(planet$ | async); let planet\">\n          <div class=\"col\">\n            <div class=\"sidebar card\">\n              <div class=\"card-header h5 text-center\">\n                Neighbours in {{ planet.name }}\n              </div>\n              <div class=\"list-group\" [@flyInOutListParent]>\n                  <app-resident [url]=\"occupant\" (click)=\"gotoDetails(occupant)\" #resident *ngFor=\"let occupant of planet.residents\"></app-resident>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n    <ng-template #loadingPerson>\n      <div class=\"lead my-5\">\n        <div class=\"loader\">Loading\n          <span class=\"loader-dot\">.</span>\n          <span class=\"loader-dot\">.</span>\n          <span class=\"loader-dot\">.</span>\n        </div>\n      </div>\n    </ng-template>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -16802,6 +16802,7 @@ module.exports = "#details label {\n  margin-bottom: 0.3rem; }\n\n#details .form
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_starwars_service__ = __webpack_require__("./src/app/services/starwars.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config_animations__ = __webpack_require__("./src/app/config/animations.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -16811,6 +16812,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -16841,7 +16843,10 @@ var DetailsComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-details',
             template: __webpack_require__("./src/app/main/details/details.component.html"),
-            styles: [__webpack_require__("./src/app/main/details/details.component.scss")]
+            styles: [__webpack_require__("./src/app/main/details/details.component.scss")],
+            animations: [
+                Object(__WEBPACK_IMPORTED_MODULE_3__config_animations__["c" /* FLY_IN_OUT_LIST_PARENT */])()
+            ]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["f" /* Router */],
@@ -16938,14 +16943,14 @@ var DetailsRoutingModule = /** @class */ (function () {
 /***/ "./src/app/main/details/resident/resident.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"(person$ | async); let person\">\n  <div class=\"d-flex w-100 justify-content-between\">\n    <h5 class=\"mb-1\">{{ person.name }} </h5>\n    <small class=\"text-muted\">{{ person.gender | titlecase}} </small>\n  </div>\n  <p class=\"mb-1\">Born in {{ person.birth_year }}.</p>\n</div>"
+module.exports = "<a href=\"javascript:;\" class=\"list-group-item list-group-item-action\" *ngIf=\"(person$ | async); let person\">\n  <div class=\"d-flex w-100 justify-content-between\">\n    <h5 class=\"mb-1\">{{ person.name }} </h5>\n    <small class=\"text-muted\">{{ person.gender | titlecase}} </small>\n  </div>\n  <p class=\"mb-1\">Born in {{ person.birth_year }}.</p>\n</a>"
 
 /***/ }),
 
 /***/ "./src/app/main/details/resident/resident.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".list-group-item {\n  background-color: rgba(247, 247, 247, 0.64);\n  margin-bottom: 4px;\n  border-radius: 0px !important; }\n"
 
 /***/ }),
 
@@ -16978,12 +16983,14 @@ var ResidentComponent = /** @class */ (function () {
     function ResidentComponent(starwarsService) {
         this.starwarsService = starwarsService;
         this.url = '';
-        this.slideInOutAnimation = 'out';
+        this.animState = 'out';
     }
     ResidentComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.person$ = this.starwarsService.fetchPersonByUrl(this.url)
-            .do(function () { return _this.slideInOutAnimation = 'in'; });
+            // .delay(90)
+            // .do(() => this.slideInOutAnimation = 'in');
+            .do(function () { return _this.animState = 'in'; });
     };
     ResidentComponent.prototype.formatDate = function (data) {
         return __WEBPACK_IMPORTED_MODULE_4_moment__(data).calendar(null, __WEBPACK_IMPORTED_MODULE_3__utility_date_format__["a" /* DATEFORMAT */]);
@@ -16995,7 +17002,7 @@ var ResidentComponent = /** @class */ (function () {
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostBinding"])('@flyInOut'),
         __metadata("design:type", Object)
-    ], ResidentComponent.prototype, "slideInOutAnimation", void 0);
+    ], ResidentComponent.prototype, "animState", void 0);
     ResidentComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-resident',

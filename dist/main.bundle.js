@@ -284,7 +284,7 @@ var AppRoutingModule = /** @class */ (function () {
 /***/ "./src/app/app.scss":
 /***/ (function(module, exports) {
 
-module.exports = "/*------------------------------------------------------------------\n * Project Name: Pawa Responsive Template\n * Project URI: http://pawa.paytron.com.ng\n * Author: Siliconbear\n * Author URI: http://siliconbear.com/\n * Description: An application that helps you buy light accross Africa\n * Version: 1.0\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n * Bootstrap v4 (http://getbootstrap.com)\n * Copyright 2017 Paytron.\n -------------------------------------------------------------------*/\n/*------------------------------------------------------------------\n[Table of contents]\n\n1. General Styles.\n2. Header Styles.\n3. Top Content Styles.\n4. info Section Styles.\n5. Services Section Styles.\n6. Message Section Styles.\n7. Pricing Section Styles.\n8. Custom Plan Section Styles.\n9. Features Section Styles.\n10. Testimonials Section Styles.\n11. More Features Section Styles.\n12. Footer Section Styles.\n13. Sign in - Sign up Pages Styles.\n14. Inner Pages Styles.\n15. Responsive Styles.\n-------------------------------------------------------------------*/\n/*------------------------------------------------------------------\n\t1. General Styles\n-------------------------------------------------------------------*/\n@media (min-width: 768px) {\n  .container-fluid {\n    padding-right: 64px !important;\n    padding-left: 64px !important; } }\n:host {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  overflow: hidden;\n  height: 100vh; }\n:host main {\n    position: relative; }\n:host router-outlet ~ * {\n    position: absolute;\n    width: 100%;\n    height: 100%; }\n.logo {\n  text-decoration: none !important; }\n.topbar {\n  position: fixed;\n  top: 0;\n  right: 0;\n  left: 0;\n  z-index: 9999; }\n.topbar .alert {\n    text-align: center;\n    margin-bottom: 0 !important; }\n.navbar {\n  background-color: #1b1b1b;\n  background-image: url('header-background.863e76e93f57cfda1cb3.png');\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-clip: border-box;\n  color: #fff !important;\n  padding-bottom: 6px !important;\n  padding-top: 6px !important; }\n.navbar-toggler-right {\n  margin-top: 12px;\n  right: 0px; }\nbody {\n  background: #fee588;\n  -webkit-transition: opacity 0.3s ease-in;\n  transition: opacity 0.3s ease-in; }\n@media (max-width: 768px) {\n  #bulb-header .navbar-nav .nav-link {\n    color: #001f39; } }\n.card, .search-bar {\n  border: 1px solid rgba(232, 206, 101, 0.55) !important; }\n.card:hover {\n  background: #f7f7f7 !important;\n  -webkit-box-shadow: 0 0 4px #e8ce65;\n  box-shadow: 0 0 4px #e8ce65;\n  -webkit-transform: scale(1.01);\n          transform: scale(1.01); }\n.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {\n  letter-spacing: -2px; }\nform {\n  margin-top: 36px; }\nform .input-group-prepend > .btn {\n    padding-left: 0.75rem !important;\n    padding-right: 0.5rem !important; }\nform .form-action a {\n    margin-top: 12px;\n    color: #a5a5a5;\n    text-decoration: underline; }\nform .form-action .form-check .form-check-input {\n    height: 30px;\n    width: 30px; }\nform .form-action .form-check .form-check-text {\n    display: block;\n    margin-left: 30px; }\n.dataTables_wrapper.container-fluid {\n  padding-left: 0 !important;\n  padding-right: 0 !important; }\n.dataTables_wrapper.container-fluid .dataTables_scrollBody {\n    min-height: 320px; }\n.inner-footer {\n  padding: 15px 0;\n  margin-left: auto;\n  margin-right: auto; }\n.inner-footer .media {\n    max-width: 460px; }\n.inner-footer .media .media-body {\n      font-size: 11px; }\n@media (max-width: 768px) {\n  .inner-footer {\n    position: relative;\n    margin-top: 60px; }\n    .inner-footer .container {\n      padding: 0; } }\n@media (max-width: 768px) {\n  .navbar {\n    background: #ffffff !important; }\n  .container {\n    margin-left: 0 !important;\n    margin-right: 0 !important; } }\n@media (max-width: 991px) {\n  .navbar-toggleable-md .navbar-nav .dropdown-menu {\n    display: block !important; } }\n@supports (zoom: 2) {\n  input[type=\"radio\"], input[type=\"checkbox\"] {\n    zoom: 1.1; } }\n@supports not (zoom: 2) {\n  input[type=\"radio\"], input[type=\"checkbox\"] {\n    -webkit-transform: scale(1.1);\n            transform: scale(1.1);\n    margin: 15px; } }\n"
+module.exports = "/*------------------------------------------------------------------\n * Project Name: Pawa Responsive Template\n * Project URI: http://pawa.paytron.com.ng\n * Author: Siliconbear\n * Author URI: http://siliconbear.com/\n * Description: An application that helps you buy light accross Africa\n * Version: 1.0\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n * Bootstrap v4 (http://getbootstrap.com)\n * Copyright 2017 Paytron.\n -------------------------------------------------------------------*/\n/*------------------------------------------------------------------\n[Table of contents]\n\n1. General Styles.\n2. Header Styles.\n3. Top Content Styles.\n4. info Section Styles.\n5. Services Section Styles.\n6. Message Section Styles.\n7. Pricing Section Styles.\n8. Custom Plan Section Styles.\n9. Features Section Styles.\n10. Testimonials Section Styles.\n11. More Features Section Styles.\n12. Footer Section Styles.\n13. Sign in - Sign up Pages Styles.\n14. Inner Pages Styles.\n15. Responsive Styles.\n-------------------------------------------------------------------*/\n/*------------------------------------------------------------------\n\t1. General Styles\n-------------------------------------------------------------------*/\n@media (min-width: 768px) {\n  .container-fluid {\n    padding-right: 64px !important;\n    padding-left: 64px !important; } }\n:host {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  overflow: hidden;\n  height: 100vh; }\n:host main {\n    position: relative; }\n:host router-outlet ~ * {\n    position: absolute;\n    width: 100%;\n    height: 100%; }\n.logo {\n  text-decoration: none !important; }\n.topbar {\n  position: fixed;\n  top: 0;\n  right: 0;\n  left: 0;\n  z-index: 9999; }\n.topbar .alert {\n    text-align: center;\n    margin-bottom: 0 !important; }\n.navbar {\n  background-color: #1b1b1b;\n  background-image: url('header-background.863e76e93f57cfda1cb3.png');\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-clip: border-box;\n  color: #fff !important;\n  padding-bottom: 6px !important;\n  padding-top: 6px !important; }\n.navbar-toggler-right {\n  margin-top: 12px;\n  right: 0px; }\nbody {\n  background: #fee588;\n  -webkit-transition: opacity 0.3s ease-in;\n  transition: opacity 0.3s ease-in; }\n@media (max-width: 768px) {\n  #bulb-header .navbar-nav .nav-link {\n    color: #001f39; } }\n.card, .search-bar {\n  border: 1px solid rgba(232, 206, 101, 0.55) !important; }\n.card:hover, .list-group-item:hover {\n  background: #f7f7f7 !important;\n  -webkit-box-shadow: 0 0 4px #e8ce65;\n  box-shadow: 0 0 4px #e8ce65;\n  -webkit-transform: scale(1.01);\n          transform: scale(1.01); }\n.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {\n  letter-spacing: -2px; }\nform {\n  margin-top: 36px; }\nform .input-group-prepend > .btn {\n    padding-left: 0.75rem !important;\n    padding-right: 0.5rem !important; }\nform .form-action a {\n    margin-top: 12px;\n    color: #a5a5a5;\n    text-decoration: underline; }\nform .form-action .form-check .form-check-input {\n    height: 30px;\n    width: 30px; }\nform .form-action .form-check .form-check-text {\n    display: block;\n    margin-left: 30px; }\n.dataTables_wrapper.container-fluid {\n  padding-left: 0 !important;\n  padding-right: 0 !important; }\n.dataTables_wrapper.container-fluid .dataTables_scrollBody {\n    min-height: 320px; }\n.inner-footer {\n  padding: 15px 0;\n  margin-left: auto;\n  margin-right: auto; }\n.inner-footer .media {\n    max-width: 460px; }\n.inner-footer .media .media-body {\n      font-size: 11px; }\n@media (max-width: 768px) {\n  .inner-footer {\n    position: relative;\n    margin-top: 60px; }\n    .inner-footer .container {\n      padding: 0; } }\n@media (max-width: 768px) {\n  .navbar {\n    background: #ffffff !important; }\n  .container {\n    margin-left: 0 !important;\n    margin-right: 0 !important; } }\n@media (max-width: 991px) {\n  .navbar-toggleable-md .navbar-nav .dropdown-menu {\n    display: block !important; } }\n@supports (zoom: 2) {\n  input[type=\"radio\"], input[type=\"checkbox\"] {\n    zoom: 1.1; } }\n@supports not (zoom: 2) {\n  input[type=\"radio\"], input[type=\"checkbox\"] {\n    -webkit-transform: scale(1.1);\n            transform: scale(1.1);\n    margin: 15px; } }\n"
 
 /***/ }),
 
@@ -298,7 +298,8 @@ module.exports = "/*------------------------------------------------------------
 /* unused harmony export SLIDE_IN_LEFT */
 /* harmony export (immutable) */ __webpack_exports__["a"] = FLY_IN_OUT;
 /* harmony export (immutable) */ __webpack_exports__["b"] = FLY_IN_OUT_LIST;
-/* harmony export (immutable) */ __webpack_exports__["c"] = ROUTER_FADE_ANIMATION;
+/* harmony export (immutable) */ __webpack_exports__["c"] = FLY_IN_OUT_LIST_PARENT;
+/* harmony export (immutable) */ __webpack_exports__["d"] = ROUTER_FADE_ANIMATION;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_animations__ = __webpack_require__("./node_modules/@angular/animations/esm5/animations.js");
 
 function FADE_IN_SCALEUP() {
@@ -378,19 +379,20 @@ function SLIDE_IN_LEFT() {
 }
 function FLY_IN_OUT() {
     return Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["n" /* trigger */])('flyInOut', [
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["k" /* state */])('', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({ opacity: 1, transform: 'translateY(0)' })),
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["m" /* transition */])('void => *', [
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["k" /* state */])('out', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({ opacity: 0, transform: 'translateY(0)' })),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["m" /* transition */])('out => in', [
             Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({
-                opacity: 0,
+                opacity: 1,
                 transform: 'translateY(15%)'
             }),
             Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('0.4s ease-in')
         ]),
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["m" /* transition */])('* => void', [
-            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('0.4s 0.2s ease-out', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["m" /* transition */])('in => out', [
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({
                 opacity: 0,
-                transform: 'translateY(-50%)'
-            }))
+                transform: 'translateY(-15%)'
+            }),
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('0.3s ease-out')
         ])
     ]);
 }
@@ -403,12 +405,12 @@ function FLY_IN_OUT_LIST() {
                     opacity: 0,
                     transform: 'translateY(15%)'
                 }),
-                Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["j" /* stagger */])(160, [
+                Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["j" /* stagger */])(180, [
                     Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('0.4s ease-in')
                 ])
             ], { optional: true }),
             Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* query */])(':leave', [
-                Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["j" /* stagger */])(80, [
+                Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["j" /* stagger */])(-60, [
                     Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('0.4s 0.2s ease-out', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["l" /* style */])({
                         opacity: 0,
                         transform: 'translateY(60%)'
@@ -416,6 +418,19 @@ function FLY_IN_OUT_LIST() {
                 ])
             ], { optional: true })
         ])
+    ]);
+}
+function FLY_IN_OUT_LIST_PARENT() {
+    return Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["n" /* trigger */])('flyInOutListParent', [
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["m" /* transition */])(':enter', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["g" /* group */])([
+            // style({ transform: 'translate(-100px)' }),
+            // animate('500ms', style({ transform: 'translate(0px)' })),
+            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* query */])(':enter', [
+                Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["j" /* stagger */])(180, [
+                    Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["f" /* animateChild */])()
+                ])
+            ], { optional: true })
+        ]))
     ]);
 }
 function ROUTER_FADE_ANIMATION() {
@@ -789,7 +804,7 @@ var PartialLayoutComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/core/layouts/partial-layout/partial-layout.component.html"),
             encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None,
             animations: [
-                Object(__WEBPACK_IMPORTED_MODULE_1__config_animations__["c" /* ROUTER_FADE_ANIMATION */])()
+                Object(__WEBPACK_IMPORTED_MODULE_1__config_animations__["d" /* ROUTER_FADE_ANIMATION */])()
             ]
         }),
         __metadata("design:paramtypes", [])

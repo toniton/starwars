@@ -90,19 +90,20 @@ export function SLIDE_IN_LEFT(): AnimationEntryMetadata {
 export function FLY_IN_OUT(): AnimationEntryMetadata {
 
     return trigger('flyInOut', [
-        state('', style({ opacity: 1, transform: 'translateY(0)' })),
-        transition('void => *', [
+        state('out', style({ opacity: 0, transform: 'translateY(0)' })),
+        transition('out => in', [
             style({
-                opacity: 0,
+                opacity: 1,
                 transform: 'translateY(15%)'
             }),
             animate('0.4s ease-in')
         ]),
-        transition('* => void', [
-            animate('0.4s 0.2s ease-out', style({
+        transition('in => out', [
+            style({
                 opacity: 0,
-                transform: 'translateY(-50%)'
-            }))
+                transform: 'translateY(-15%)'
+            }),
+            animate('0.3s ease-out')
         ])
     ])
 }
@@ -117,12 +118,12 @@ export function FLY_IN_OUT_LIST(): AnimationEntryMetadata {
                     opacity: 0,
                     transform: 'translateY(15%)'
                 }),
-                stagger(160, [
+                stagger(180, [
                     animate('0.4s ease-in')
                 ])
             ], { optional: true }),
             query(':leave', [
-                stagger(80, [
+                stagger(-60, [
                     animate('0.4s 0.2s ease-out', style({
                         opacity: 0,
                         transform: 'translateY(60%)'
@@ -133,13 +134,27 @@ export function FLY_IN_OUT_LIST(): AnimationEntryMetadata {
     ])
 }
 
+export function FLY_IN_OUT_LIST_PARENT(): AnimationEntryMetadata {
+    return trigger('flyInOutListParent', [
+        transition(':enter', group([
+            // style({ transform: 'translate(-100px)' }),
+            // animate('500ms', style({ transform: 'translate(0px)' })),
+            query(':enter', [
+                stagger(180, [
+                    animateChild()
+                ])
+            ], { optional: true })
+        ]))
+    ])
+}
+
 export function ROUTER_FADE_ANIMATION(): AnimationEntryMetadata {
     return trigger('routerFadeAnimation', [
         transition('* => *', [
             query(':enter',
                 [
                     style({ opacity: 0 }),
-                    animate('0.2s', style({ opacity: 1}))
+                    animate('0.2s', style({ opacity: 1 }))
                 ],
                 { optional: true }
             ),

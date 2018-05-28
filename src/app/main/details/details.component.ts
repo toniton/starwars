@@ -2,11 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { StarwarsService } from '../../services/starwars.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FLY_IN_OUT_LIST_PARENT } from '../../config/animations';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.scss']
+  styleUrls: ['./details.component.scss'],
+  animations: [
+    FLY_IN_OUT_LIST_PARENT()
+  ]
 })
 export class DetailsComponent implements OnInit {
   public person$: Observable<any>;
