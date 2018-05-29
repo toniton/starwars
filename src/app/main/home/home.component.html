@@ -1,5 +1,5 @@
 <div id="home">
-    <div class="row my-5">
+    <div class="row align-items-center justify-content-between my-5">
         <div class="col-md-6">
             <h1 class="display-6 home-title">Looking for your favourite
                 <br/> StarWars character?</h1>
@@ -17,7 +17,7 @@
                         <div class="input-group search-bar" [class.is-invalid]="(person.errors && person.dirty) || (person.errors && person.touched)">
                             <input aria-describedby="personHelp" class="form-control" [class.is-invalid]="(person.errors && person.dirty) || (person.errors && person.touched)"
                                 id="name" name="name" placeholder="Search for your starwars character" type="search" [(ngModel)]="model.name"
-                                #person="ngModel" (focus)="setSearchOverlayStatus(true)" (focusout)="setSearchOverlayStatus(false)"
+                                #person="ngModel" (input)="searchType($event.target.value)" (focus)="setSearchOverlayStatus(true)" (focusout)="setSearchOverlayStatus(false)"
                                 required/>
                             <button class="btn btn-primary pulsate" type="submit" loadingButton [changeState]="progressEmitter" [disabled]="!form.form.valid || validating">Search</button>
                         </div>

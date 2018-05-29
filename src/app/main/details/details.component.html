@@ -2,9 +2,7 @@
   <div class="content">
     <div class="row mt-5" *ngIf="(person$ | async); let person; else loadingPerson">
       <div class="col-md-8">
-        <h1 class="display-4"> {{ person.name }}
-          <small class="font-weight-light">(Character)</small>
-        </h1>
+        <h1 class="display-4"> {{ person.name }}</h1>
         <div class="card mt-3">
           <div class="card-body">
             <div class="planet-section">

@@ -39,6 +39,12 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.initPeople();
     }
 
+    searchType(query) {
+        if (query === '') {
+            this.initPeople();
+        }
+    }
+
     initPeople() {
         this.people$ = this.starwarsService.people()
             .do((response: any) => this.setCurrentPageCount(response.results.length, response.next, response.count));

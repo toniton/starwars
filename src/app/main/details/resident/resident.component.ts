@@ -23,8 +23,7 @@ export class ResidentComponent implements OnInit {
 
   ngOnInit() {
     this.person$ = this.starwarsService.fetchPersonByUrl(this.url)
-    // .delay(90)
-    // .do(() => this.slideInOutAnimation = 'in');
+    .delay(60)
     .do(() => this.animState = 'in');
   }
 

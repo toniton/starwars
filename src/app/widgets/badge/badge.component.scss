@@ -1,17 +1,19 @@
 #beta-badge {
-    top: 190px;
+    top: 200px;
     position: fixed;
     z-index: 9999;
     &.left {
         left: 0;
-        margin-left: -12px;
+        margin-left: -1px;
         a {
             background-image: url('../../../assets/images/beta-badge.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
         }
     }
     a {
-        width: 70px;
-        height: 105px;
+        width: 36px;
+        height: 58px;
         display: block;
         text-indent: -8e3px;
         background-repeat: no-repeat;
