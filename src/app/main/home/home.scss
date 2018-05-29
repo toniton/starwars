@@ -46,6 +46,10 @@
 
         .filter-body {
 
+            .btn-group {
+                flex-flow: wrap;
+            }
+            
             .btn, .dropdown-toggle {
                 font-size: 12px;
                 letter-spacing: 1.7px;
