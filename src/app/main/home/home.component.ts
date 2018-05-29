@@ -2,7 +2,7 @@ import {
     Component, OnInit, OnDestroy, Input, ViewEncapsulation,
     HostListener, Inject, AfterViewInit, EventEmitter, forwardRef, HostBinding, ViewChild
 } from '@angular/core';
-import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { DOCUMENT } from '@angular/platform-browser';
 import { FLY_IN_OUT_LIST } from '../../config/animations';
 import { Subscription } from 'rxjs/Subscription';
@@ -10,6 +10,7 @@ import { NgForm } from '@angular/forms';
 import { StarwarsService } from '../../services/starwars.service';
 import { trigger, state, transition, style, animate } from '@angular/animations';
 import { Observable } from 'rxjs/Observable';
+import { Person } from '../../models/person';
 @Component({
     templateUrl: './home.component.html',
     styleUrls: [
@@ -20,22 +21,16 @@ import { Observable } from 'rxjs/Observable';
         FLY_IN_OUT_LIST()
     ]
 })
-export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
-    validating = false;
-    validateObserver: any;
+export class HomeComponent implements OnInit, OnDestroy {
     model: any = {};
-    public user: any;
     public subscription: Subscription;
     public progressEmitter = new EventEmitter();
-    public progressLoading = false;
-    public locationLoading = false;
-    public people$: Observable<any>;
+    public people$: Observable<Person>;
     public searchOverlay = false;
     public itemsCount = 0;
     @ViewChild('searchForm') form: NgForm;
 
     constructor(
-        private route: ActivatedRoute,
         private router: Router,
         private starwarsService: StarwarsService
     ) { }
@@ -44,12 +39,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         this.initPeople();
     }
 
-    ngAfterViewInit(): void {
-    }
-
     initPeople() {
         this.people$ = this.starwarsService.people()
-        .do((response: any) => this.setCurrentPageCount(response.results.length, response.next, response.count));
+            .do((response: any) => this.setCurrentPageCount(response.results.length, response.next, response.count));
     }
 
     setSearchOverlayStatus(status) {
@@ -58,20 +50,20 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     onSubmit(form: NgForm) {
         this.setSearchOverlayStatus(false);
-        const data: any = form.value;
-        this.people$ = this.starwarsService.findPeople(data.person)
-        .do((response: any) => this.setCurrentPageCount(response.results.length, response.next, response.count));
+        const person: Person = new Person().deserialize(form.value);
+        this.people$ = this.starwarsService.findPeople(person.name)
+            .do((response: any) => this.setCurrentPageCount(response.results.length, response.next, response.count));
     }
 
     gotoDetails(url: string) {
-        const urlId = url.replace('https://swapi.co/api/people/', '').replace('/', '');
+        const urlId = this.starwarsService.getPersonIdFromUrl(url);
         this.router.navigate(['/details', urlId])
     }
 
     loadPage(url: string) {
-        const pageNumber = url.replace('https://swapi.co/api/people/?page=', '');
+        const pageNumber = this.starwarsService.getPageNumberFromUrl(url);
         this.people$ = this.starwarsService.people(pageNumber)
-        .do((response: any) => this.setCurrentPageCount(response.results.length, response.next, response.count));
+            .do((response: any) => this.setCurrentPageCount(response.results.length, response.next, response.count));
     }
 
     setCurrentPageCount(items, url, totalCount) {
@@ -79,7 +71,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
             this.itemsCount = totalCount;
             return;
         }
-        const pageNumber = url.replace('https://swapi.co/api/people/?page=', '');
+        const pageNumber = this.starwarsService.getPageNumberFromUrl(url);
         this.itemsCount = items * (pageNumber - 1);
     }
 

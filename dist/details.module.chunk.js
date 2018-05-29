@@ -16829,14 +16829,14 @@ var DetailsComponent = /** @class */ (function () {
                 _this.person$ = _this.starwarsService.fetchPerson(params.id);
                 _this.person$.subscribe(function (data) {
                     if (data.homeworld) {
-                        _this.planet$ = _this.starwarsService.planet(data.homeworld);
+                        _this.planet$ = _this.starwarsService.fetchPlanetByUrl(data.homeworld);
                     }
                 });
             }
         });
     };
     DetailsComponent.prototype.gotoDetails = function (url) {
-        var urlId = url.replace('https://swapi.co/api/people/', '').replace('/', '');
+        var urlId = this.starwarsService.getPersonIdFromUrl(url);
         this.router.navigate(['/details', urlId]);
     };
     DetailsComponent = __decorate([

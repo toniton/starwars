@@ -40,33 +40,40 @@
         padding-left: 64px !important;
     }
 }
+
 :host {
     display: flex;
     overflow: hidden;
     height: 100vh;
+
     main {
       position: relative;
     }
+    
     router-outlet ~ * {
       position: absolute;
       width: 100%;
       height: 100%;
     }
-  }
+}
+
 .logo {
     text-decoration: none !important;
 }
+
 .topbar{
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     z-index: 9999;
+
     .alert {
         text-align: center;
         margin-bottom: 0 !important;
     }
 }
+
 .navbar {
     background-color: #1b1b1b;
     background-image: url('../assets/images/header-background.png');
@@ -77,6 +84,7 @@
     padding-bottom: 6px !important;
     padding-top: 6px !important;
 }
+
 .navbar-toggler-right {
     margin-top: 12px;
     right: 0px;
@@ -85,15 +93,6 @@
 body {
     background: #fee588;
     transition: opacity 0.3s ease-in;
-}
-@media(max-width:768px){
-    #bulb-header {
-        .navbar-nav {
-            .nav-link {
-                color: #001f39;
-            }
-        }
-    }
 }
 
 
@@ -117,21 +116,27 @@ body {
 
 form {
     margin-top: 36px;
+
     .input-group-prepend > .btn {
         padding-left: 0.75rem !important;
         padding-right: 0.5rem !important;
     }
+
     .form-action {
+
         a {
             margin-top: 12px;
             color: #a5a5a5;
             text-decoration: underline; 
         }
+
         .form-check{
+
             .form-check-input {
                 height: 30px;
                 width: 30px;
             }
+
             .form-check-text{
                 display: block;
                 margin-left: 30px;
@@ -166,7 +171,8 @@ form {
 @media(max-width:768px){
 	.inner-footer {
 		position: relative;
-		margin-top: 60px;
+        margin-top: 60px;
+        
 		.container {
 			padding: 0;
 		}
@@ -174,14 +180,12 @@ form {
 }
 
 @media(max-width:768px){
-    .navbar {
-        background: #ffffff !important;
-    }
     .container {
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
 }
+
 @media (max-width: 991px){
     .navbar-toggleable-md .navbar-nav .dropdown-menu {
         display: block !important;

@@ -29,7 +29,7 @@ export class DetailsComponent implements OnInit {
         this.person$ = this.starwarsService.fetchPerson(params.id);
         this.person$.subscribe((data) => {
           if (data.homeworld) {
-            this.planet$ = this.starwarsService.planet(data.homeworld);
+            this.planet$ = this.starwarsService.fetchPlanetByUrl(data.homeworld);
           }
         });
       }
@@ -37,7 +37,7 @@ export class DetailsComponent implements OnInit {
   }
 
   gotoDetails(url: string) {
-      const urlId = url.replace('https://swapi.co/api/people/', '').replace('/', '');
+      const urlId = this.starwarsService.getPersonIdFromUrl(url);
       this.router.navigate(['/details', urlId])
   }
 
